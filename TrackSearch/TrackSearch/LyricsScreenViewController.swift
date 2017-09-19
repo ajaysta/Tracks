@@ -21,6 +21,7 @@ class LyricsScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Setup all UI date which recevied from previous view 
         self.trackName.text = trackDetails.trackName
         self.collectionName.text = trackDetails.collectionName
         self.trackImage.image = trackDetails.imageOfTheAlbum
@@ -38,7 +39,7 @@ class LyricsScreenViewController: UIViewController {
         let nameToSearch = artistName.replacingOccurrences(of: " ", with: "+")
         let trackNameToSerach = trackName.replacingOccurrences(of: " ", with: "+")
         let urlToSearch = URL.init(string: baseURL + nameToSearch + "&song=" + trackNameToSerach + "&fmt=realjson")
-        //Fetch the lyrics 
+        //Fetch the lyrics
         let task = URLSession.shared.dataTask(with: urlToSearch!){ data, response, error in
             guard let jsonData = data, error == nil else { return }
             let jsonString = try? JSONSerialization.jsonObject(with: jsonData, options: []) as! Dictionary<String, Any>
