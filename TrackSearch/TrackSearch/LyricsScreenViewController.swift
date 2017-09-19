@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Display the lyrics
 class LyricsScreenViewController: UIViewController {
 
     var trackDetails : TrackModel!
@@ -28,13 +29,16 @@ class LyricsScreenViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // Fetch the lyrics and load in Lyrics screen
     func loadTheLyrics(artistName: String, trackName: String)
     {
         //http://lyrics.wikia.com/api.php?func=getSong&artist=Tom+Waits&song=new+coat+of+paint&fmt=json
+        //This URL should be put in plist file
         let baseURL = "https://lyrics.wikia.com/api.php?func=getSong&artist="
         let nameToSearch = artistName.replacingOccurrences(of: " ", with: "+")
         let trackNameToSerach = trackName.replacingOccurrences(of: " ", with: "+")
         let urlToSearch = URL.init(string: baseURL + nameToSearch + "&song=" + trackNameToSerach + "&fmt=realjson")
+        //Fetch the lyrics 
         let task = URLSession.shared.dataTask(with: urlToSearch!){ data, response, error in
             guard let jsonData = data, error == nil else { return }
             let jsonString = try? JSONSerialization.jsonObject(with: jsonData, options: []) as! Dictionary<String, Any>

@@ -8,6 +8,8 @@
 
 import UIKit
 
+//Holds the Cell view UI elements
+
 class MusicSearchTableCellView: UITableViewCell {
 
     @IBOutlet weak var imgView: UIImageView!

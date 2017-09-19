@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// Model to hold the track details, strcut also can be used to create a model 
 class TrackModel: NSObject {
 
     var trackName : String? //track name

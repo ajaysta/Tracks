@@ -33,7 +33,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
-                                    <action selector="searchButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="pOX-WL-Hsa"/>
+                                    <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="Fnh-DC-K3D"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Oz-36-M7d">
